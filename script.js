@@ -193,12 +193,17 @@ generateBtn.addEventListener("click", () => {
 
     try {
 
-        new QRCode(qrcodeDiv, {
-            text: qrData,
-            width: 250,
-            height: 250,
-            correctLevel: QRCode.CorrectLevel.H
-        });
+        const qrColor = document.getElementById("qrColor").value;
+const qrBackground = document.getElementById("qrBackground").value;
+
+new QRCode(qrcodeDiv, {
+    text: qrData,
+    width: 250,
+    height: 250,
+    colorDark: qrColor,
+    colorLight: qrBackground,
+    correctLevel: QRCode.CorrectLevel.H
+});
 
         qrResult.style.display = "block";
 
