@@ -9,10 +9,8 @@ const message = document.getElementById("message");
 
 let currentType = "url";
 
-/* CAMBIAR TIPO DE QR */
-
+// CAMBIAR TIPO DE QR
 typeButtons.forEach(button => {
-
     button.addEventListener("click", () => {
 
         typeButtons.forEach(btn => {
@@ -39,20 +37,17 @@ typeButtons.forEach(button => {
         qrcodeDiv.innerHTML = "";
         message.textContent = "";
     });
-
 });
 
 
-/* GENERAR QR */
-
+// GENERAR QR
 generateBtn.addEventListener("click", () => {
 
     let qrData = "";
 
     message.textContent = "";
 
-    /* URL */
-
+    // URL
     if (currentType === "url") {
 
         const url = document
@@ -69,8 +64,7 @@ generateBtn.addEventListener("click", () => {
     }
 
 
-    /* WHATSAPP */
-
+    // WHATSAPP
     if (currentType === "whatsapp") {
 
         const phone = document
@@ -88,23 +82,22 @@ generateBtn.addEventListener("click", () => {
             return;
         }
 
-        let cleanPhone = phone.replace(/\D/g, "");
+        const cleanPhone = phone.replace(/\D/g, "");
 
-        qrData =
-            "https://wa.me/" +
-            cleanPhone;
+        if (cleanPhone.length < 7) {
+            showError("Escribe un número de teléfono válido.");
+            return;
+        }
+
+        qrData = "https://wa.me/" + cleanPhone;
 
         if (whatsappMessage) {
-
-            qrData +=
-                "?text=" +
-                encodeURIComponent(whatsappMessage);
+            qrData += "?text=" + encodeURIComponent(whatsappMessage);
         }
     }
 
 
-    /* WIFI */
-
+    // WIFI
     if (currentType === "wifi") {
 
         const name = document
@@ -137,8 +130,7 @@ generateBtn.addEventListener("click", () => {
     }
 
 
-    /* EMAIL */
-
+    // EMAIL
     if (currentType === "email") {
 
         const email = document
@@ -161,18 +153,25 @@ generateBtn.addEventListener("click", () => {
             return;
         }
 
-        qrData =
-            "mailto:" +
-            email +
-            "?subject=" +
-            encodeURIComponent(subject) +
-            "&body=" +
-            encodeURIComponent(body);
+        qrData = "mailto:" + email;
+
+        const params = [];
+
+        if (subject) {
+            params.push("subject=" + encodeURIComponent(subject));
+        }
+
+        if (body) {
+            params.push("body=" + encodeURIComponent(body));
+        }
+
+        if (params.length > 0) {
+            qrData += "?" + params.join("&");
+        }
     }
 
 
-    /* TEXTO */
-
+    // TEXTO
     if (currentType === "text") {
 
         const text = document
@@ -189,8 +188,7 @@ generateBtn.addEventListener("click", () => {
     }
 
 
-    /* CREAR QR */
-
+    // CREAR QR
     qrcodeDiv.innerHTML = "";
 
     try {
@@ -215,18 +213,14 @@ generateBtn.addEventListener("click", () => {
 
     } catch (error) {
 
-        showError(
-            "No se pudo crear el código QR."
-        );
+        showError("No se pudo crear el código QR.");
 
         console.error(error);
     }
-
 });
 
 
-/* DESCARGAR QR */
-
+// DESCARGAR QR
 downloadBtn.addEventListener("click", () => {
 
     const canvas = qrcodeDiv.querySelector("canvas");
@@ -241,11 +235,7 @@ downloadBtn.addEventListener("click", () => {
     }
 
     if (!imageURL) {
-
-        showError(
-            "Primero genera un código QR."
-        );
-
+        showError("Primero genera un código QR.");
         return;
     }
 
@@ -262,8 +252,7 @@ downloadBtn.addEventListener("click", () => {
 });
 
 
-/* MENSAJE DE ERROR */
-
+// MENSAJE DE ERROR
 function showError(text) {
 
     message.style.color = "#dc2626";
@@ -271,8 +260,7 @@ function showError(text) {
 }
 
 
-/* ESCAPAR CARACTERES WIFI */
-
+// ESCAPAR CARACTERES WIFI
 function escapeWifi(text) {
 
     return text
@@ -281,3 +269,4 @@ function escapeWifi(text) {
         .replace(/,/g, "\\,")
         .replace(/:/g, "\\:");
 }
+        
