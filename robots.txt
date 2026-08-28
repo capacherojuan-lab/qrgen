@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://capacherojuan-lab.github.io/qrgen/sitemap.xml
