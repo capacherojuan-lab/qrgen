@@ -195,11 +195,13 @@ generateBtn.addEventListener("click", () => {
 
         const qrColor = document.getElementById("qrColor").value;
 const qrBackground = document.getElementById("qrBackground").value;
-
+const qrSize = parseInt(
+    document.getElementById("qrSize").value
+);
 new QRCode(qrcodeDiv, {
     text: qrData,
-    width: 250,
-    height: 250,
+    width: qrSize,
+height: qrSize,
     colorDark: qrColor,
     colorLight: qrBackground,
     correctLevel: QRCode.CorrectLevel.H
