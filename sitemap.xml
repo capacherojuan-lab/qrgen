@@ -8,6 +8,21 @@
     </url>
 
     <url>
+        <loc>https://capacherojuan-lab.github.io/qrgen/qr-whatsapp.html</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://capacherojuan-lab.github.io/qrgen/qr-wifi.html</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://capacherojuan-lab.github.io/qrgen/qr-email.html</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
         <loc>https://capacherojuan-lab.github.io/qrgen/privacy.html</loc>
         <priority>0.3</priority>
     </url>
