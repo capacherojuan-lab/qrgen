@@ -1,0 +1,325 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #111827;
+    min-height: 100vh;
+}
+
+/* HEADER */
+
+.header {
+    background: #111827;
+    color: white;
+    text-align: center;
+    padding: 28px 15px;
+}
+
+.logo {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.logo span {
+    color: #4f46e5;
+}
+
+.header p {
+    color: #cbd5e1;
+    font-size: 16px;
+}
+
+/* CONTENEDOR */
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    padding: 35px 15px 60px;
+}
+
+/* HERO */
+
+.hero {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-size: 40px;
+    line-height: 1.15;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    color: #64748b;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* CAJA PRINCIPAL */
+
+.qr-box {
+    background: white;
+    max-width: 650px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 22px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+.qr-box h2 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+/* TIPOS DE QR */
+
+.qr-types {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.type-btn {
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    color: #334155;
+    padding: 12px 5px;
+    border-radius: 10px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.type-btn:hover {
+    border-color: #4f46e5;
+}
+
+.type-btn.active {
+    background: #4f46e5;
+    color: white;
+    border-color: #4f46e5;
+}
+
+/* FORMULARIOS */
+
+.form-section {
+    display: none;
+}
+
+.form-section.active {
+    display: block;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin: 15px 0 8px;
+    color: #1e293b;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 16px;
+    font-family: inherit;
+    outline: none;
+    background: white;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #4f46e5;
+}
+
+textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+/* BOTÓN GENERAR */
+
+#generateBtn {
+    width: 100%;
+    margin-top: 25px;
+    border: none;
+    background: #4f46e5;
+    color: white;
+    padding: 16px;
+    border-radius: 11px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#generateBtn:hover {
+    background: #4338ca;
+}
+
+#generateBtn:active {
+    transform: scale(0.98);
+}
+
+/* MENSAJE */
+
+#message {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+/* RESULTADO */
+
+.qr-result {
+    display: none;
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #e2e8f0;
+}
+
+#qrcode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+#qrcode img {
+    width: 250px;
+    height: 250px;
+    padding: 10px;
+    background: white;
+    border: 1px solid #e2e8f0;
+}
+
+/* DESCARGAR */
+
+.download-btn {
+    border: none;
+    background: #111827;
+    color: white;
+    padding: 14px 25px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.download-btn:hover {
+    background: #374151;
+}
+
+/* INFORMACIÓN */
+
+.info {
+    margin-top: 55px;
+    text-align: center;
+}
+
+.info h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.info > p {
+    max-width: 750px;
+    margin: auto;
+    color: #64748b;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* CARACTERÍSTICAS */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.feature {
+    background: white;
+    padding: 25px 18px;
+    border-radius: 16px;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.05);
+}
+
+.icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.feature h3 {
+    margin-bottom: 8px;
+}
+
+.feature p {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* FOOTER */
+
+.footer {
+    background: #111827;
+    color: #94a3b8;
+    text-align: center;
+    padding: 25px 15px;
+    font-size: 14px;
+}
+
+/* CELULARES */
+
+@media (max-width: 650px) {
+
+    .container {
+        padding: 25px 12px 50px;
+    }
+
+    .hero h1 {
+        font-size: 31px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .qr-box {
+        padding: 22px 18px;
+        border-radius: 18px;
+    }
+
+    .qr-types {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .type-btn {
+        padding: 13px 5px;
+        font-size: 14px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .logo {
+        font-size: 34px;
+    }
+}

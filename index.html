@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Generador QR Gratis | Crea Códigos QR Online</title>
+
+    <meta name="description"
+        content="Crea códigos QR gratis para enlaces, WhatsApp, WiFi, email y más. Genera y descarga tu código QR fácilmente.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo">
+        QR<span>Gen</span>
+    </div>
+
+    <p>Generador de códigos QR gratis</p>
+
+</header>
+
+
+<main class="container">
+
+    <section class="hero">
+
+        <h1>Generador de códigos QR gratis</h1>
+
+        <p>
+            Crea tu código QR en segundos y descárgalo gratis.
+        </p>
+
+    </section>
+
+
+    <section class="qr-box">
+
+        <h2>¿Qué tipo de QR quieres crear?</h2>
+
+        <div class="qr-types">
+
+            <button class="type-btn active" data-type="url">
+                🔗 Enlace
+            </button>
+
+            <button class="type-btn" data-type="whatsapp">
+                💬 WhatsApp
+            </button>
+
+            <button class="type-btn" data-type="wifi">
+                📶 WiFi
+            </button>
+
+            <button class="type-btn" data-type="email">
+                📧 Email
+            </button>
+
+            <button class="type-btn" data-type="text">
+                📝 Texto
+            </button>
+
+        </div>
+
+
+        <!-- URL -->
+
+        <div class="form-section active" id="urlForm">
+
+            <label for="urlInput">
+                Enlace
+            </label>
+
+            <input
+                type="url"
+                id="urlInput"
+                placeholder="https://ejemplo.com"
+            >
+
+        </div>
+
+
+        <!-- WHATSAPP -->
+
+        <div class="form-section" id="whatsappForm">
+
+            <label for="phoneInput">
+                Número de WhatsApp
+            </label>
+
+            <input
+                type="tel"
+                id="phoneInput"
+                placeholder="573001234567"
+            >
+
+            <label for="whatsappMessage">
+                Mensaje (opcional)
+            </label>
+
+            <textarea
+                id="whatsappMessage"
+                placeholder="Hola, quiero información..."
+            ></textarea>
+
+        </div>
+
+
+        <!-- WIFI -->
+
+        <div class="form-section" id="wifiForm">
+
+            <label for="wifiName">
+                Nombre de la red WiFi
+            </label>
+
+            <input
+                type="text"
+                id="wifiName"
+                placeholder="Mi WiFi"
+            >
+
+            <label for="wifiPassword">
+                Contraseña
+            </label>
+
+            <input
+                type="text"
+                id="wifiPassword"
+                placeholder="Contraseña"
+            >
+
+            <label for="wifiSecurity">
+                Seguridad
+            </label>
+
+            <select id="wifiSecurity">
+
+                <option value="WPA">
+                    WPA/WPA2
+                </option>
+
+                <option value="WEP">
+                    WEP
+                </option>
+
+                <option value="nopass">
+                    Sin contraseña
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- EMAIL -->
+
+        <div class="form-section" id="emailForm">
+
+            <label for="emailInput">
+                Correo electrónico
+            </label>
+
+            <input
+                type="email"
+                id="emailInput"
+                placeholder="correo@ejemplo.com"
+            >
+
+            <label for="emailSubject">
+                Asunto
+            </label>
+
+            <input
+                type="text"
+                id="emailSubject"
+                placeholder="Asunto del correo"
+            >
+
+            <label for="emailBody">
+                Mensaje
+            </label>
+
+            <textarea
+                id="emailBody"
+                placeholder="Escribe tu mensaje..."
+            ></textarea>
+
+        </div>
+
+
+        <!-- TEXTO -->
+
+        <div class="form-section" id="textForm">
+
+            <label for="textInput">
+                Tu texto
+            </label>
+
+            <textarea
+                id="textInput"
+                placeholder="Escribe cualquier texto..."
+            ></textarea>
+
+        </div>
+
+
+        <button id="generateBtn">
+            Generar código QR
+        </button>
+
+
+        <div id="message"></div>
+
+
+        <div id="qrResult" class="qr-result">
+
+            <div id="qrcode"></div>
+
+            <button
+                id="downloadBtn"
+                class="download-btn">
+                Descargar QR
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <section class="info">
+
+        <h2>Generador QR online gratis</h2>
+
+        <p>
+            QRGen te permite crear códigos QR rápidamente para
+            compartir enlaces, números de WhatsApp, redes WiFi,
+            correos electrónicos y textos.
+        </p>
+
+
+        <div class="features">
+
+            <div class="feature">
+
+                <div class="icon">⚡</div>
+
+                <h3>Rápido</h3>
+
+                <p>
+                    Genera tu código QR en pocos segundos.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="icon">🔒</div>
+
+                <h3>Fácil de usar</h3>
+
+                <p>
+                    No necesitas registrarte.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="icon">📱</div>
+
+                <h3>Compatible</h3>
+
+                <p>
+                    Funciona en celulares y computadoras.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="footer">
+
+    <p>
+        © 2026 QRGen. Todos los derechos reservados.
+    </p>
+
+</footer>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
